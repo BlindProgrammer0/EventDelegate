@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventDelegate"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="300" Width="400">
+    <Window.Resources>
+        <DataTemplate x:Key="Information">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" Width="25" Text="{Binding Type}"/>
+                <TextBox Text="{Binding Name}" MinWidth="35"  />
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
         
-    </Grid>
+        <Button Name="bt" DockPanel.Dock="Bottom" Height="20" Click="Bt_Click">猫叫</Button>
+        <ListBox Name="lb" ItemTemplate="{StaticResource Information}" Width="80">
+        </ListBox >
+        <TextBox Name="tb"/>
+    </DockPanel>
+
 </Window>
